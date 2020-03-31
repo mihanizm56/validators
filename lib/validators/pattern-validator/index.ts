@@ -8,6 +8,7 @@ import {
   emailPattern,
   phoneNumber,
   decimalNumbers,
+  datePattern,
 } from '@/patterns';
 
 export class PatternValidator extends IPatternValidator {
@@ -47,6 +48,14 @@ export class PatternValidator extends IPatternValidator {
     getIsValueMatchPattern({
       value,
       pattern: phoneNumber,
+    })
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.incorrect };
+
+  dateOnly = (value?: string) =>
+    getIsValueMatchPattern({
+      value,
+      pattern: datePattern,
     })
       ? { error: false, errorTextValue: '' }
       : { error: true, errorTextValue: validationErrors.incorrect };

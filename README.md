@@ -27,16 +27,17 @@ const maxValidatedValue: ValidatorReturnsType = new SimpleValidator().maxLenghtV
 const requiredValidatedValue: ValidatorReturnsType = new SimpleValidator().requiredValidator('')
 ```
 
-#### PetternValidator usage
+#### PatternValidator usage
 
 ```javascript
-import { PetternValidator } from "@mihanizm56/validators";
+import { PatternValidator } from "@mihanizm56/validators";
 
 const numberValidatedValue: ValidatorReturnsType = new PatternValidator().numbersOnly('12313')
 const cyrillicValidatedValue: ValidatorReturnsType = new PatternValidator().cyrillicsOnly('12313')
 const decimalValidatedValue: ValidatorReturnsType = new PatternValidator().decimalNumbers('12313')
 const emailValidatedValue: ValidatorReturnsType = new PatternValidator().email('12313')
 const phoneValidatedValue: ValidatorReturnsType = new PatternValidator().phoneNumber('12313')
+const dateValidatedValue: ValidatorReturnsType = new PatternValidator().dateOnly('12313')
 
 const customValidatedValue: ValidatorReturnsType = new PatternValidator().customPatternValidate(
     {
@@ -66,10 +67,10 @@ const isValueMatch: boolean = getIsValueMatchPattern(
 ```javascript
 import { Form } from 'react-final-form';
 import { FormTextInput } from '@/components/form-text-input'
-import { PetternValidator, composeValidators, SimpleValidator } from "@mihanizm56/validators";
+import { PatternValidator, composeValidators, SimpleValidator } from "@mihanizm56/validators";
 
 const simpleValidator = new SimpleValidator()
-const patternValidator = new PetternValidator()
+const patternValidator = new PatternValidator()
 
 const fieldValidations: string = composeValidators(
     [
