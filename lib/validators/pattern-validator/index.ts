@@ -1,55 +1,55 @@
 import { getIsValueMatchPattern } from '@/utils/get-value-is-match-pattern';
 import { validationErrors } from '@/constants';
 import { CustomPatternValidateParams } from '@/types';
-import { IRegularPatternValidator } from '@/types/pattern-validators';
+import { IPatternValidator } from '@/types/pattern-validators';
 import {
   simpleNumbersOnly,
   cyrrillicsOnly,
   emailPattern,
   phoneNumber,
   decimalNumbers,
-} from '../../../patterns';
+} from '@/patterns';
 
-export class RegularPatternValidator implements IRegularPatternValidator {
+export class PatternValidator extends IPatternValidator {
   numbersOnly = (value?: string) =>
     getIsValueMatchPattern({
       value,
       pattern: simpleNumbersOnly,
     })
-      ? { error: true, errorTextValue: validationErrors.incorrect }
-      : { error: false };
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.incorrect };
 
   cyrillicsOnly = (value?: string) =>
     getIsValueMatchPattern({
       value,
       pattern: cyrrillicsOnly,
     })
-      ? { error: true, errorTextValue: validationErrors.incorrect }
-      : { error: false };
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.incorrect };
 
   decimalNumbers = (value?: string) =>
     getIsValueMatchPattern({
       value,
       pattern: decimalNumbers,
     })
-      ? { error: true, errorTextValue: validationErrors.incorrect }
-      : { error: false };
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.incorrect };
 
   email = (value?: string) =>
     getIsValueMatchPattern({
       value,
       pattern: emailPattern,
     })
-      ? { error: true, errorTextValue: validationErrors.incorrect }
-      : { error: false };
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.incorrect };
 
   phoneNumber = (value?: string) =>
     getIsValueMatchPattern({
       value,
       pattern: phoneNumber,
     })
-      ? { error: true, errorTextValue: validationErrors.incorrect }
-      : { error: false };
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.incorrect };
 
   customPatternValidate = ({
     value,
@@ -60,9 +60,9 @@ export class RegularPatternValidator implements IRegularPatternValidator {
       value,
       pattern,
     })
-      ? {
+      ? { error: false, errorTextValue: '' }
+      : {
           error: true,
           errorTextValue: errorTextValue || validationErrors.incorrect,
-        }
-      : { error: false };
+        };
 }

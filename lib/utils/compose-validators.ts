@@ -1,14 +1,14 @@
-import { ComposeValidatorsParams } from '@/types';
+import { Validator } from '@/types';
 
-export const composeValidators = ({ validators }: ComposeValidatorsParams) => (
+export const composeValidators = (validators: Array<Validator>) => (
   value?: string | number | Record<string, any> | Array<any>,
 ): string =>
   validators.reduce((prevError, validator) => {
     if (!Boolean(prevError)) {
-      const error = validator(value);
+      const { error, errorTextValue } = validator(value);
 
-      if (Boolean(error)) {
-        return error;
+      if (error) {
+        return errorTextValue;
       }
     }
 

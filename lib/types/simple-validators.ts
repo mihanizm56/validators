@@ -1,25 +1,13 @@
-import { RegularValidatorReturnsType, FormValidatorReturnsType } from './index';
+import { ValidatorReturnsType } from './index';
 
-export abstract class IFormSimpleValidator {
-  abstract formMinLenghtValidate: (
-    numberOfChars: number,
-  ) => (value?: string) => FormValidatorReturnsType;
-
-  abstract formMaxLenghtValidate: (
-    numberOfChars: number,
-  ) => (value?: string) => FormValidatorReturnsType;
-
-  abstract formRequiredValidator: (value: string) => FormValidatorReturnsType;
-}
-
-export abstract class IRegularSimpleValidator {
+export abstract class ISimpleValidator {
   abstract minLenghtValidate: (
     numberOfChars: number,
-  ) => (value?: string) => RegularValidatorReturnsType;
+  ) => (value?: string) => ValidatorReturnsType;
 
   abstract maxLenghtValidate: (
     numberOfChars: number,
-  ) => (value?: string) => RegularValidatorReturnsType;
+  ) => (value?: string) => ValidatorReturnsType;
 
-  abstract requiredValidator: (value: string) => RegularValidatorReturnsType;
+  abstract requiredValidator: (value: string) => ValidatorReturnsType;
 }

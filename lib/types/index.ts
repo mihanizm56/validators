@@ -4,13 +4,14 @@ export type CustomPatternValidateParams = {
   errorTextValue?: string;
 };
 
+export type ValidatorReturnsType = {
+  error: boolean;
+  errorTextValue: string;
+};
+
 export type Validator = (
   value?: string | number | Record<string, any> | Array<any>,
-) => string;
-
-export type ComposeValidatorsParams = {
-  validators: Array<Validator>;
-};
+) => ValidatorReturnsType;
 
 export type MatchPatternParamsType = {
   pattern: RegExp;
@@ -18,8 +19,3 @@ export type MatchPatternParamsType = {
 };
 
 export type FormValidatorReturnsType = string;
-
-export type RegularValidatorReturnsType = {
-  error: boolean;
-  errorTextValue?: string;
-};

@@ -1,19 +1,19 @@
-import { IRegularSimpleValidator } from '@/types/simple-validators';
-import { validationErrors } from '../../../constants';
+import { ISimpleValidator } from '@/types/simple-validators';
+import { validationErrors } from '@/constants';
 
-export class RegularSimpleValidator extends IRegularSimpleValidator {
+export class SimpleValidator extends ISimpleValidator {
   minLenghtValidate = (numberOfChars: number) => (value?: string) =>
     value && value.length && value.length < numberOfChars
       ? { error: true, errorTextValue: validationErrors.minLenght }
-      : { error: false };
+      : { error: false, errorTextValue: '' };
 
   maxLenghtValidate = (numberOfChars: number) => (value?: string) =>
     value && value.length && value.length > numberOfChars
       ? { error: true, errorTextValue: validationErrors.maxLenght }
-      : { error: false };
+      : { error: false, errorTextValue: '' };
 
   requiredValidator = (value: string) =>
     Boolean(value.trim())
-      ? { error: true, errorTextValue: validationErrors.required }
-      : { error: false };
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.required };
 }

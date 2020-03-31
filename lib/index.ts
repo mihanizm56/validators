@@ -1,9 +1,13 @@
 
-export {FormPatternValidator} from '@/validators/form/form-pattern-validator'
-export {FormSimpleValidator} from '@/validators/form/form-simple-validator'
+export {PatternValidator} from '@/validators/pattern-validator'
+export {SimpleValidator} from '@/validators/simple-validator'
 
 export {
-    ComposeValidatorsParams,
     FormValidatorReturnsType,
-    RegularValidatorReturnsType
+    ValidatorReturnsType,
+    Validator
 } from '@/types'
+
+export {composeValidators} from './utils/compose-validators'
+
+export {getIsValueMatchPattern} from './utils/get-value-is-match-pattern'

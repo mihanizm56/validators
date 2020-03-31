@@ -1,33 +1,15 @@
-import {
-  CustomPatternValidateParams,
-  RegularValidatorReturnsType,
-  FormValidatorReturnsType,
-} from './index';
+import { CustomPatternValidateParams, ValidatorReturnsType } from './index';
 
-export abstract class IFormPatternValidator {
-  abstract formNumbersOnly: (value?: string) => FormValidatorReturnsType;
+export abstract class IPatternValidator {
+  abstract numbersOnly: (value?: string) => ValidatorReturnsType;
 
-  abstract formCyrillicsOnly: (value?: string) => FormValidatorReturnsType;
+  abstract cyrillicsOnly: (value?: string) => ValidatorReturnsType;
 
-  abstract formDecimalNumbers: (value?: string) => FormValidatorReturnsType;
+  abstract decimalNumbers: (value?: string) => ValidatorReturnsType;
 
-  abstract formEmail: (value?: string) => FormValidatorReturnsType;
-
-  abstract formCustomPatternValidate: (
-    params: CustomPatternValidateParams,
-  ) => FormValidatorReturnsType;
-}
-
-export abstract class IRegularPatternValidator {
-  abstract numbersOnly: (value?: string) => RegularValidatorReturnsType;
-
-  abstract cyrillicsOnly: (value?: string) => RegularValidatorReturnsType;
-
-  abstract decimalNumbers: (value?: string) => RegularValidatorReturnsType;
-
-  abstract email: (value?: string) => RegularValidatorReturnsType;
+  abstract email: (value?: string) => ValidatorReturnsType;
 
   abstract customPatternValidate: (
     params: CustomPatternValidateParams,
-  ) => RegularValidatorReturnsType;
+  ) => ValidatorReturnsType;
 }

@@ -1,3 +1,5 @@
-const { SimpleValidator } = require('../dist');
+const { PatternValidator, composeValidators } = require('../dist');
 
-new SimpleValidator().minLenghtValidate(1)('12313');
+const result = composeValidators([new PatternValidator().email])(
+  'm727507.56@mail.ru',
+);
