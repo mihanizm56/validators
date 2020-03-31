@@ -1,6 +1,6 @@
-# @mihanizm56/fetch-api
+# @mihanizm56/validators
 
-## Sollution for http/1.1 isomorphic fetch
+## Sollution for validations
 
 ### Benefits:
 
