@@ -12,8 +12,8 @@ export class SimpleValidator extends ISimpleValidator {
       ? { error: true, errorTextValue: validationErrors.maxLenght }
       : { error: false, errorTextValue: '' };
 
-  requiredValidator = (value: string) =>
-    Boolean(value.trim())
+  requiredValidator = (value?: string) =>
+    value && Boolean(value.trim())
       ? { error: false, errorTextValue: '' }
       : { error: true, errorTextValue: validationErrors.required };
 }
