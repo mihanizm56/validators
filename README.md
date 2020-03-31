@@ -24,7 +24,7 @@ import { SimpleValidator } from "@mihanizm56/validators";
 
 const minValidatedValue: ValidatorReturnsType = new SimpleValidator().minLenghtValidate(1)('12313')
 const maxValidatedValue: ValidatorReturnsType = new SimpleValidator().maxLenghtValidate(1)('12313')
-const requiredValidatedValue: ValidatorReturnsType =new SimpleValidator().requiredValidator('')
+const requiredValidatedValue: ValidatorReturnsType = new SimpleValidator().requiredValidator('')
 ```
 
 #### PetternValidator usage
@@ -32,13 +32,13 @@ const requiredValidatedValue: ValidatorReturnsType =new SimpleValidator().requir
 ```javascript
 import { PetternValidator } from "@mihanizm56/validators";
 
-const numberValidatedValue: ValidatorReturnsType  = new PatternValidator().numbersOnly('12313')
-const cyrillicValidatedValue: ValidatorReturnsType  = new PatternValidator().cyrillicsOnly('12313')
-const decimalValidatedValue: ValidatorReturnsType  = new PatternValidator().decimalNumbers('12313')
-const emailValidatedValue: ValidatorReturnsType  = new PatternValidator().email('12313')
-const phoneValidatedValue: ValidatorReturnsType  = new PatternValidator().phoneNumber('12313')
+const numberValidatedValue: ValidatorReturnsType = new PatternValidator().numbersOnly('12313')
+const cyrillicValidatedValue: ValidatorReturnsType = new PatternValidator().cyrillicsOnly('12313')
+const decimalValidatedValue: ValidatorReturnsType = new PatternValidator().decimalNumbers('12313')
+const emailValidatedValue: ValidatorReturnsType = new PatternValidator().email('12313')
+const phoneValidatedValue: ValidatorReturnsType = new PatternValidator().phoneNumber('12313')
 
-const customValidatedValue: ValidatorReturnsType  = new PatternValidator().customPatternValidate(
+const customValidatedValue: ValidatorReturnsType = new PatternValidator().customPatternValidate(
     {
         value:'foo',
         pattern:/^[foo]$/,
@@ -52,7 +52,7 @@ const customValidatedValue: ValidatorReturnsType  = new PatternValidator().custo
 ```javascript
 import { getIsValueMatchPattern } from "@mihanizm56/validators";
 
-const isValueMatch: boolean  = getIsValueMatchPattern(
+const isValueMatch: boolean = getIsValueMatchPattern(
     {
         value:'foo',
         pattern:/^[foo]$/
