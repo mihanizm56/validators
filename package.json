@@ -1,6 +1,6 @@
 {
   "name": "@mihanizm56/validators",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "simple and regexp validation service",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
