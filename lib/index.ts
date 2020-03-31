@@ -10,3 +10,12 @@ export {
 export {composeValidators} from './utils/compose-validators'
 
 export {getIsValueMatchPattern} from './utils/get-value-is-match-pattern'
+
+export {
+    simpleNumbersOnly,
+    decimalNumbers,
+    cyrrillicsOnly,
+    emailPattern,
+    phoneNumber,
+    datePattern
+} from './patterns'
