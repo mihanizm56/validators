@@ -3,7 +3,6 @@ export {PatternValidator} from '@/validators/pattern-validator'
 export {SimpleValidator} from '@/validators/simple-validator'
 
 export {
-    FormValidatorReturnsType,
     ValidatorReturnsType,
     Validator
 } from '@/types'
