@@ -11,5 +11,5 @@ export abstract class IPatternValidator {
 
   abstract customPatternValidate: (
     params: CustomPatternValidateParams,
-  ) => ValidatorReturnsType;
+  ) => (value?: string) => ValidatorReturnsType;
 }

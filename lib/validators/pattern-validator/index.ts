@@ -61,10 +61,9 @@ export class PatternValidator extends IPatternValidator {
       : { error: true, errorTextValue: validationErrors.incorrect };
 
   customPatternValidate = ({
-    value,
     pattern,
     errorTextValue,
-  }: CustomPatternValidateParams) =>
+  }: CustomPatternValidateParams) => (value?: string) =>
     getIsValueMatchPattern({
       value,
       pattern,

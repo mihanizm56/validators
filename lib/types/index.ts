@@ -1,5 +1,4 @@
 export type CustomPatternValidateParams = {
-  value: string;
   pattern: RegExp;
   errorTextValue?: string;
 };
