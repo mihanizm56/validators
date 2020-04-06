@@ -1,4 +1,4 @@
-# @mihanizm56/validators
+# @wildberries/validators
 
 ## Sollution for validations
 
@@ -14,13 +14,13 @@
 #### installation
 
 ```javascript
-npm install @mihanizm56/validators
+npm install @wildberries/validators
 ```
 
 #### SimpleValidator usage
 
 ```javascript
-import { SimpleValidator } from "@mihanizm56/validators";
+import { SimpleValidator } from "@wildberries/validators";
 
 const minValidatedValue: ValidatorReturnsType = new SimpleValidator().minLenghtValidate(1)('12313')
 const maxValidatedValue: ValidatorReturnsType = new SimpleValidator().maxLenghtValidate(1)('12313')
@@ -30,7 +30,7 @@ const requiredValidatedValue: ValidatorReturnsType = new SimpleValidator().requi
 #### PatternValidator usage
 
 ```javascript
-import { PatternValidator } from "@mihanizm56/validators";
+import { PatternValidator } from "@wildberries/validators";
 
 const numberValidatedValue: ValidatorReturnsType = new PatternValidator().numbersOnly('12313')
 const cyrillicValidatedValue: ValidatorReturnsType = new PatternValidator().cyrillicsOnly('12313')
@@ -51,7 +51,7 @@ const customValidatedValue: ValidatorReturnsType = new PatternValidator().custom
 #### Custom validation usage
 
 ```javascript
-import { getIsValueMatchPattern } from "@mihanizm56/validators";
+import { getIsValueMatchPattern } from "@wildberries/validators";
 
 const isValueMatch: boolean = getIsValueMatchPattern(
     {
@@ -67,7 +67,7 @@ const isValueMatch: boolean = getIsValueMatchPattern(
 ```javascript
 import { Form } from 'react-final-form';
 import { FormTextInput } from '@/components/form-text-input'
-import { PatternValidator, composeValidators, SimpleValidator } from "@mihanizm56/validators";
+import { PatternValidator, composeValidators, SimpleValidator } from "@wildberries/validators";
 
 const simpleValidator = new SimpleValidator()
 const patternValidator = new PatternValidator()
