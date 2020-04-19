@@ -9,6 +9,8 @@ export abstract class IPatternValidator {
 
   abstract email: (value?: string) => ValidatorReturnsType;
 
+  abstract requiredValidator: (value: string) => ValidatorReturnsType;
+
   abstract customPatternValidate: (
     params: CustomPatternValidateParams,
   ) => (value?: string) => ValidatorReturnsType;

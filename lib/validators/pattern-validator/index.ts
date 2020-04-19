@@ -9,6 +9,7 @@ import {
   phoneNumber,
   decimalNumbers,
   datePattern,
+  isEmptyPattern,
 } from '@/patterns';
 
 export class PatternValidator extends IPatternValidator {
@@ -73,4 +74,12 @@ export class PatternValidator extends IPatternValidator {
           error: true,
           errorTextValue: errorTextValue || validationErrors.incorrect,
         };
+
+  requiredValidator = (value?: string) =>
+    getIsValueMatchPattern({
+      value,
+      pattern: isEmptyPattern,
+    })
+      ? { error: false, errorTextValue: '' }
+      : { error: true, errorTextValue: validationErrors.required };
 }
