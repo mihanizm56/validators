@@ -8,4 +8,6 @@ export abstract class ISimpleValidator {
   abstract maxLenghtValidate: (
     numberOfChars: number,
   ) => (value?: string) => ValidatorReturnsType;
+
+  abstract requiredValidator: (value: string) => ValidatorReturnsType;
 }

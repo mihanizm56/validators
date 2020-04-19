@@ -74,12 +74,4 @@ export class PatternValidator extends IPatternValidator {
           error: true,
           errorTextValue: errorTextValue || validationErrors.incorrect,
         };
-
-  requiredValidator = (value?: string) =>
-    getIsValueMatchPattern({
-      value,
-      pattern: isEmptyPattern,
-    })
-      ? { error: false, errorTextValue: '' }
-      : { error: true, errorTextValue: validationErrors.required };
 }

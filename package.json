@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/validators",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.2-beta.1",
   "description": "simple and regexp validation service",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,6 +12,7 @@
     "lint": "npx eslint . --ext .ts --fix",
     "commit": "git add . && git commit --no-edit",
     "packages-vulnerability-check": "check-audit",
+    "save": "npm run commit && git push && git push && npm run pub",
     "release": "npm publish --access=public",
     "beta": "npm publish --tag beta --access=public",
     "size": "pkgfiles"
