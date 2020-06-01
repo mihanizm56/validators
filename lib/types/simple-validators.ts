@@ -2,12 +2,14 @@ import { ValidatorReturnsType } from './index';
 
 export abstract class ISimpleValidator {
   abstract minLenghtValidate: (
+    numberOfChars: number,
     errorTextValue?: string,
-  ) => (numberOfChars: number) => (value?: string) => ValidatorReturnsType;
+  ) => (value?: string) => ValidatorReturnsType;
 
   abstract maxLenghtValidate: (
+    numberOfChars: number,
     errorTextValue?: string,
-  ) => (numberOfChars: number) => (value?: string) => ValidatorReturnsType;
+  ) => (value?: string) => ValidatorReturnsType;
 
   abstract requiredValidator: (
     errorTextValue?: string,

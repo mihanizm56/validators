@@ -48,13 +48,13 @@ npm_ckeck_vulnerabilities:
  script:
    - npm run packages-vulnerability-check
 
-compile:
+build:
   tags:
     - golang
     - linux
   stage: tests_bundle
   script:
-    - npm run compile
+    - npm run build
   artifacts:
     paths:
       - build/

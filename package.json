@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/validators",
-  "version": "0.0.4-beta.1",
+  "version": "0.0.4-beta.2",
   "description": "simple and regexp validation service",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "test:watch": "jest --watch",
     "test": "set CI=true && jest",
     "test:coverage": "jest --coverage",
-    "compile": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./lib -o ./dist",
+    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./lib -o ./dist",
     "lint": "npx eslint . --ext .ts --fix",
     "commit": "git add . && git commit --no-edit",
     "packages-vulnerability-check": "check-audit",

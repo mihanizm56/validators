@@ -2,7 +2,7 @@ import { ISimpleValidator } from '@/types/simple-validators';
 import { validationErrors } from '@/constants';
 
 export class SimpleValidator extends ISimpleValidator {
-  minLenghtValidate = (errorTextValue?: string) => (numberOfChars: number) => (
+  minLenghtValidate = (numberOfChars: number, errorTextValue?: string) => (
     value?: string,
   ) =>
     value && value.length && value.length < numberOfChars
@@ -12,7 +12,7 @@ export class SimpleValidator extends ISimpleValidator {
         }
       : { error: false, errorTextValue: '' };
 
-  maxLenghtValidate = (errorTextValue?: string) => (numberOfChars: number) => (
+  maxLenghtValidate = (numberOfChars: number, errorTextValue?: string) => (
     value?: string,
   ) =>
     value && value.length && value.length > numberOfChars
