@@ -3,6 +3,28 @@
     "1179|commitizen>minimist": {
       "decision": "fix",
       "madeAt": 1587548421698
+    },
+    "1500|ts-jest>yargs-parser": {
+      "decision": "fix",
+      "madeAt": 1591010620916
+    },
+    "1500|@commitlint/cli>@commitlint/lint>@commitlint/parse>conventional-commits-parser>meow>yargs-parser": {
+      "decision": "fix",
+      "madeAt": 1591010638205
+    },
+    "1500|@commitlint/cli>@commitlint/read>git-raw-commits>meow>yargs-parser": {
+      "decision": "fix",
+      "madeAt": 1591010652014
+    },
+    "1500|@commitlint/cli>meow>yargs-parser": {
+      "decision": "ignore",
+      "madeAt": 1591010658592,
+      "expiresAt": 1593602605873
+    },
+    "1500|npm-audit-resolver>audit-resolve-core>yargs-parser": {
+      "decision": "ignore",
+      "madeAt": 1591010658592,
+      "expiresAt": 1593602605873
     }
   },
   "rules": {},
