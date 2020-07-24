@@ -22,20 +22,31 @@ export class SimpleValidator extends ISimpleValidator {
         }
       : { error: false, errorTextValue: '' };
 
-  requiredValidator = (errorTextValue?: string) => (value?: string) => {
+  requiredValidator = (errorTextValue?: string) => (
+    value?: string | Array<any>,
+  ) => {
     if (value) {
-      if (typeof value === 'string') {
-        return Boolean(value.trim())
-          ? { error: false, errorTextValue: '' }
-          : {
-              error: true,
-              errorTextValue: errorTextValue || validationErrors.required,
-            };
+      // if string is empty
+      if (typeof value === 'string' && !Boolean(value.trim())) {
+        return {
+          error: true,
+          errorTextValue: errorTextValue || validationErrors.required,
+        };
       }
 
+      // if array in empty
+      if (value instanceof Array && value.length === 0) {
+        return {
+          error: true,
+          errorTextValue: errorTextValue || validationErrors.required,
+        };
+      }
+
+      // success ending
       return { error: false, errorTextValue: '' };
     }
 
+    // if value is not valid
     return {
       error: true,
       errorTextValue: errorTextValue || validationErrors.required,
