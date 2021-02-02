@@ -1,5 +1,5 @@
 {
-  "name": "@wildberries/validators",
+  "name": "@mihanizm56/validators",
   "version": "0.1.4",
   "description": "simple and regexp validation service",
   "main": "dist/index.js",
