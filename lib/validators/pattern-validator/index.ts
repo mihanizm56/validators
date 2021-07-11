@@ -1,6 +1,9 @@
 import { getIsValueMatchPattern } from '@/utils/get-value-is-match-pattern';
 import { validationErrors } from '@/constants';
-import { CustomPatternValidateParams } from '@/types';
+import {
+  CustomPatternsValidateParams,
+  CustomPatternValidateParams,
+} from '@/types';
 import { IPatternValidator } from '@/types/pattern-validators';
 import {
   simpleNumbersOnly,
@@ -10,6 +13,7 @@ import {
   decimalNumbers,
   datePattern,
 } from '@/patterns';
+import { getIsValueMatchMultiplePatterns } from '@/utils/get-is-value-match-multiple-patterns';
 
 export class PatternValidator extends IPatternValidator {
   numbersOnly = (errorTextValue?: string) => (value?: string) =>
@@ -91,4 +95,17 @@ export class PatternValidator extends IPatternValidator {
           error: true,
           errorTextValue: errorTextValue || validationErrors.incorrect,
         };
+
+  customPatternsValidate = ({
+    errorTextValue,
+    allValid,
+    patterns,
+  }: CustomPatternsValidateParams) => (value?: string) => {
+    return getIsValueMatchMultiplePatterns({ allValid, patterns, value })
+      ? { error: false, errorTextValue: '' }
+      : {
+          error: true,
+          errorTextValue: errorTextValue || validationErrors.incorrect,
+        };
+  };
 }

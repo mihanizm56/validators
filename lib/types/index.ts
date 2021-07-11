@@ -3,6 +3,12 @@ export type CustomPatternValidateParams = {
   errorTextValue?: string;
 };
 
+export type CustomPatternsValidateParams = {
+  patterns: Array<RegExp>;
+  errorTextValue: string;
+  allValid?: boolean;
+};
+
 export type ValidatorReturnsType = {
   error: boolean;
   errorTextValue: string;
