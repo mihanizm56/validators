@@ -1,6 +1,6 @@
 {
   "name": "@mihanizm56/validators",
-  "version": "1.2.1",
+  "version": "1.2.2-beta.1",
   "description": "simple and regexp validation service",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,6 @@
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./lib -o ./dist",
     "lint": "npx eslint . --ext .ts --fix",
     "commit": "git add . && git commit --no-edit",
-    "packages-vulnerability-check": "check-audit",
     "release": "npm run commit && git push && npm publish --access=public",
     "beta": "npm run commit && git push &&npm publish --tag beta --access=public",
     "size": "pkgfiles"
@@ -19,7 +18,7 @@
   "author": "mihanizm56",
   "license": "MIT",
   "dependencies": {
-    "typescript": "3.8.3"
+    "typescript": "4.5.2"
   },
   "devDependencies": {
     "@commitlint/cli": "9.1.2",
@@ -39,13 +38,10 @@
     "eslint-plugin-security": "1.4.0",
     "husky": "3.0.9",
     "jest": "25.1.0",
-    "npm-audit-resolver": "2.1.0",
     "pkgfiles": "2.3.2",
     "prettier": "1.18.2",
     "ts-jest": "26.1.0",
-    "tsconfig-paths": "3.9.0",
-    "tscpaths": "0.0.9",
-    "typescript-transform-paths": "1.1.14"
+    "tscpaths": "0.0.9"
   },
   "files": [
     "dist/"
