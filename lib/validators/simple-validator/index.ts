@@ -52,4 +52,34 @@ export class SimpleValidator extends ISimpleValidator {
       errorTextValue: errorTextValue || validationErrors.required,
     };
   };
+
+  // for backup compatibility
+  requiredValidate = this.requiredValidator;
+
+  rangeValidate = ({
+    minValue,
+    maxValue,
+    errorTextValue,
+    isStrict,
+  }: {
+    minValue: number;
+    maxValue: number;
+    errorTextValue?: string;
+    isStrict?: boolean;
+  }) => (value?: string) => {
+    const numberValue = Number(value);
+
+    const isValid = isStrict
+      ? numberValue > minValue && numberValue < maxValue
+      : numberValue >= minValue && numberValue <= maxValue;
+
+    if (isValid) {
+      return { error: false, errorTextValue: '' };
+    }
+
+    return {
+      error: true,
+      errorTextValue: errorTextValue || validationErrors.incorrect,
+    };
+  };
 }
